@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dictionary.DictionaryServletTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-11-28T16:17:35" hostname="Ninas-MBP" time="1.213">
+  <properties/>
+  <testcase name="doGet()" classname="dictionary.DictionaryServletTest" time="1.213"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
