@@ -11,7 +11,7 @@ public class DictionaryServlet {
    ScrabbleDictionary dictionary;
 
 
-    public DictionaryServlet() throws FileNotFoundException {
+    public DictionaryServlet() throws IOException {
         dictionary = new ScrabbleDictionary();
     }
 

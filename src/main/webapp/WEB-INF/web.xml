@@ -16,7 +16,7 @@
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>PathServlet</servlet-name>
+        <servlet-name>DictionaryServlet</servlet-name>
         <url-pattern>/path</url-pattern>
     </servlet-mapping>
 

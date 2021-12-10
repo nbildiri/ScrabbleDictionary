@@ -1,7 +1,6 @@
 package dictionary;
 
-import java.io.FileNotFoundException;
-import java.io.FileReader;
+import java.io.*;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -10,14 +9,22 @@ public class ScrabbleDictionary {
 
     private final Map<String, String> wordsToDefinitions = new HashMap<>();
 
-    public ScrabbleDictionary() throws FileNotFoundException {
+    public ScrabbleDictionary() throws IOException {
 
-        Scanner scanner = new Scanner(new FileReader("src/main/resources/dictionary.txt"));
-        while (scanner.hasNext()) {
+        InputStream in = getClass().getClassLoader().getResourceAsStream("dictionary.txt");
+        BufferedReader reader = null;
+        if (in != null)
+        {
+            reader = new BufferedReader(new InputStreamReader(in));
+        }
+        String dictionaryLine;
+        while ((dictionaryLine = reader.readLine()) != null)
+        {
+            int index = dictionaryLine.indexOf(" ");
+            String[] pairs = dictionaryLine.split(" ", 2);
             wordsToDefinitions.put(
-                    scanner.next(), // key
-                    scanner.nextLine().trim() // value
-            );
+                    index == -1 ? dictionaryLine : dictionaryLine.substring(0, index), //key
+                    index > -1 ? dictionaryLine.substring(index + 1) : null);
         }
     }
 
